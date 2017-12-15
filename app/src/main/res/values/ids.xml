@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="recyclerNoiDung" type="id" />
+    <item name="hinhTruyenChiTiet" type="id" />
+    <item name="tenTruyenChiTiet" type="id" />
+    <item name="thongTinTruyen" type="id" />
+    <item name="moTaTruyenChiTiet" type="id" />
+    <item name="danhSachChapter" type="id" />
+    <item name="tenChapterChiTiet" type="id" />
+    <item name="ngayDang" type="id" />
+    <item name="imgHinhTruyen" type="id" />
+    <item name="HinhTruyen" type="id" />
+    <item name="tenTruyen" type="id" />
+    <item name="tenChap" type="id" />
+    <item name="search" type="id" />
+    <item name="theLoai" type="id" />
+    <item name="khungNoiDung" type="id" />
+    <item name="timKiemRecycler" type="id" />
+    <item name="noiDung" type="id" />
+    <item name="recyclTruyenMoi" type="id" />
+    <item name="recyclTruyenCapNhat" type="id" />
+    <item name="recyclTruyenFullHayNhat" type="id" />
+    <item name="recyclerNoiDungTruyen" type="id" />
+    <item name="tenTheLoai" type="id" />
+    <item name="theLoaiRecycler" type="id" />
+    <item name="toolBarText" type="id" />
+    <item name="PreButton" type="id" />
+    <item name="NextButton" type="id" />
+    <item name="tenChapterNoiDung" type="id" />
+</resources>
