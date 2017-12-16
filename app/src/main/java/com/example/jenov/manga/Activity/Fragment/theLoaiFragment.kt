@@ -1,4 +1,4 @@
-package com.example.jenov.manga.Fragment
+package com.example.jenov.manga.Activity.Fragment
 
 import android.os.Build
 import android.os.Bundle
@@ -47,8 +47,8 @@ class theLoaiFragment : Fragment() {
 
     private fun getTheLoai() {
         doAsync {
-            val document = Jsoup.connect("http://webtruyen.com/").get()
-            val element = document.select(" div[class=w3-row w3-dropdown-content w3-card-2 navbar-dropdown] a")
+            val document = Jsoup.connect("http://truyentranh.net/").get()
+            val element = document.select(" div[class=category] div[class=col-xs-6] a")
             for (values in element) {
                 val linkTheLoai = values.attr("href")
                 val tenTheLoai = values.text()

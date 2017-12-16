@@ -27,4 +27,5 @@
     <item name="PreButton" type="id" />
     <item name="NextButton" type="id" />
     <item name="tenChapterNoiDung" type="id" />
+    <item name="recyclerTheLoai" type="id" />
 </resources>

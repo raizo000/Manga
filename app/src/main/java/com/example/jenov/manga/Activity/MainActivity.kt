@@ -6,14 +6,13 @@ import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.RecyclerView
 import android.text.Editable
 import android.text.TextWatcher
-import android.util.Log
 import android.view.View
 import android.widget.EditText
 import android.widget.ImageView
 import android.widget.LinearLayout
 import com.example.jenov.manga.Adapter.AdapterTruyenMoi
 import com.example.jenov.manga.Adapter.AdapterTruyenFullHayNhat
-import com.example.jenov.manga.Fragment.theLoaiFragment
+import com.example.jenov.manga.Activity.Fragment.theLoaiFragment
 import com.example.jenov.manga.Layout.MainLayout
 import com.example.jenov.manga.Model.ChapterModel
 import com.example.jenov.manga.Model.TruyenModel
