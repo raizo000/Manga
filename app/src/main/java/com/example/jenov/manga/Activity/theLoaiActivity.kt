@@ -25,7 +25,7 @@ class theLoaiActivity : AppCompatActivity() {
     var recyclerViewTheLoai: RecyclerView? = null
     var toolBarText: TextView? = null
     var maxPage = 1
-    var itemDangHienThi = 8
+    var itemDangHienThi = 9
     var linkPage = ""
     var oldPage = 1
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -44,6 +44,8 @@ class theLoaiActivity : AppCompatActivity() {
                 val layoutmanager = recyclerView?.layoutManager as GridLayoutManager
                 val tongItemDaHienThi = layoutmanager.findFirstCompletelyVisibleItemPosition()
                 val tongItem = layoutmanager.itemCount
+                Log.d("Tong item đã hiển thị", "${tongItemDaHienThi + itemDangHienThi}")
+                Log.d("Tong item", "${tongItem}")
                 if (tongItem <= (tongItemDaHienThi + itemDangHienThi)) {
                     if (oldPage <= maxPage) {
                         getToanBoDuLieuTruyen("$linkPage?p=$oldPage")
@@ -91,12 +93,11 @@ class theLoaiActivity : AppCompatActivity() {
                 val linkTruyen = value.select("a.tooltips").attr("href")
                 val linkHinhTruyen = value.select("img").attr("src")
                 val tenTruyen = value.select("h4.manga-newest").text()
-                val tenChap = value.select("div[class=media-body] p[class=description descripfix] a").text()
+                val tenChap = ""//value.select("div[class=media-body] p[class=description descripfix] a").text()
                 val linkChap = value.select("a.tooltips").attr("href")
                 val chapterModel = ChapterModel(tenChap, linkChap)
                 listChapter.add(chapterModel)
 
-                var listChapTerTruyenMoi: MutableList<ChapterModel> = mutableListOf()
                 val truyenmodal = TruyenModel(tenTruyen, linkTruyen, listChapter, linkHinhTruyen)
                 listTruyen.add(truyenmodal)
             }
