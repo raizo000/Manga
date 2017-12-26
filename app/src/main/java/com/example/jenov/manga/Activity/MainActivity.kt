@@ -153,27 +153,27 @@ class MainActivity : AppCompatActivity(), TextWatcher {
 
 
     private fun getDuLieuTruyenFull() {
-        val linkPage = "http://webtruyen.com/truyen-full/"
+
         doAsync {
-            val document = Jsoup.connect("http://webtruyen.com/truyen-full/").get()
-            val maxPageLink = document.select("div[class=w3-center pagination] ul[class=w3-pagination paging] li a[class=last]").attr("href")
-            val maxPage = maxPageLink.substring(maxPageLink.length - 4, maxPageLink.length - 1).toInt()
+            var linkPage = "http://truyentranh.net/danh-sach.tall.html?p="
+            val doc = Jsoup.connect("${linkPage}1").get()
+            val elementMaxPage = doc.select("div.pagination a").last()
+            val maxPage = elementMaxPage.text().toInt()
             for (value in 1..maxPage) {
-                getItem("$linkPage$value/")
+                getItem("$linkPage$value")
             }
         }
     }
 
     private fun getItem(link: String) {
         val document = Jsoup.connect(link).get()
-        val elementList = document.select("div[class=list-update] div[class=w3-row list-content] div[class=w3-col s6 m3 l3 list]")
+        val elementList = document.select("div[id=loadlist] div[class=media mainpage-manga]")
         for (item in elementList) {
-
-            val tenTruyen = item.select("div[class=list-caption] h3").text()
-            val tenChap = item.select("div[class=list-caption] p").text()
-            val linkTruyen = item.select("a[class=w3-hover-opacity]").attr("href")
-            val linkHinh = item.select("a[class=w3-hover-opacity] img").attr("src")
-            val linkChap = item.select("a[class=w3-hover-opacity]").attr("href")
+            val tenTruyen = item.select(" h4[class=manga-newest]").text()
+            val tenChap = ""
+            val linkTruyen = item.select("a.tooltips").attr("href")
+            val linkHinh = item.select("img").attr("src")
+            val linkChap = ""
             val chapterModel = ChapterModel(tenChap, linkChap)
             listChapterTruyenFull.add(chapterModel)
             val truyenModel = TruyenModel(tenTruyen, linkTruyen, listChapterTruyenFull, linkHinh)
